@@ -1,0 +1,189 @@
+@import "spritemap.css";
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+
+:root {
+  --bg-color: rgb(170, 171, 254);
+  --gold: #ffb000;
+  --card-bg: rgb(79, 74, 78);
+ --card-bg-o13:  rgba(79, 74, 78, 0.13);
+ --card-bg-o5:  rgba(79, 74, 78, 0.5);
+ --card-bg-o0:  rgba(79, 74, 78, 0.0);
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: 'Press Start 2P', cursive;
+}
+
+.header {
+  background-color: hsl(0, 95%, 22%);
+  color: var(--gold);
+  text-align: center;
+  height: 64px;
+  margin-bottom: 25px;
+  padding: 8px;
+
+}
+
+.card {
+  width: 250px;
+  height: 350px;
+  border-top: 8px ridge var(--gold);
+  border-left: 8px groove var(--gold);
+  border-right: 8px ridge var(--gold);
+  border-bottom: 8px groove var(--gold);
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 5px 3px rgba(1,1,1,0.3);
+}
+
+.card-title {
+  background: hsl(0, 95%, 22%);
+  color: var(--gold);
+  font-size: 16px !important;
+  text-align: center;
+  padding: 5px;
+  margin: 0;
+  border-bottom: 4px groove var(--gold);
+}
+
+.card-subtitle {
+  background: hsl(0, 95%, 22%);
+  color: var(--gold);
+  font-size: 12px;
+  text-align: center;
+  padding: 5px;
+  margin: 0;
+  border-bottom: 4px groove var(--gold);
+}
+
+.card-text {
+  font-size: 12px;
+  text-align: left;
+}
+
+.upper{
+  background-color: var(--card-bg);
+  margin: 0;
+  border-bottom: 4px groove var(--gold);
+  
+}
+
+.add-item{
+  background: hsl(29, 65%, 50%) url('gold_coin_32.png') 5px no-repeat;
+  color: var(--card-bg);
+  font-size: 16px;
+  text-align: left;
+  width:85px;
+  height: 50px;
+  padding-top: 12px;
+  padding-left: 40px;
+  margin: 5px auto !important;
+  border-top: 2px ridge var(--card-bg);
+  border-left: 2px groove var(--card-bg);
+  border-right: 2px ridge var(--card-bg);
+  border-bottom: 2px groove var(--card-bg);
+  border-radius: 8px;
+  box-shadow: inset 0px 0px 5px 3px rgba(1,1,1,0.3);
+}
+
+.add-item:hover{
+  transform: scale(1.1);
+}
+
+.swords {
+  background-image: url('Fantasy_Swords_3x.png');
+  background-repeat: no-repeat;
+}
+
+#item-1 {
+  height: var(--pixel-size-96);
+  background-position: var(--sprite-96-2-1);
+}
+
+#item-2 {
+  height: var(--pixel-size-96);
+  background-position: var(--sprite-96-2-2);
+}
+
+#item-3 {
+  height: var(--pixel-size-96);
+  background-position: var(--sprite-96-2-3);
+}
+
+#item-4 {
+  height: var(--pixel-size-96);
+  background-position: var(--sprite-96-2-4);
+}
+
+#item-5 {
+  height: var(--pixel-size-96);
+  background-position: var(--sprite-96-7-3);
+}
+
+#item-6 {
+  height: var(--pixel-size-96);
+  background-position: var(--sprite-96-6-3);
+}
+
+#item-7 {
+  height: var(--pixel-size-96);
+  background-position: var(--sprite-96-1-3);
+}
+
+#item-8 {
+  height: var(--pixel-size-96);
+  background-position: var(--sprite-96-4-2);
+}
+
+.icon {
+  position: relative;
+  overflow: hidden;
+  height: var(--pixel-size-96);
+  width: var(--pixel-size-96);
+  display: inline-block;
+  
+  margin: 15px;
+  padding: 0;
+}
+
+.icon:after {
+  animation: shine 4s ease-in-out  infinite;
+  animation-fill-mode: forwards;  
+  content: "";
+  position: absolute;
+  top: -110%;
+  left: -210%;
+  width: 200%;
+  height: 200%;
+  opacity: 0;
+  transform: rotate(-30deg);
+
+  background: var(--bg-color-o13);
+  background: linear-gradient(
+    to right, 
+    var(--card-bg-o13) 0%,
+    var(--card-bg-o13) 77%,
+    var(--card-bg-o5) 92%,
+    var(--card-bg-o0) 100%
+  );
+  -webkit-background-clip: content-box;
+  background-clip: content-box;
+}
+
+@keyframes shine{
+  10% {
+  opacity: 1;
+  top: -30%;
+  left: -30%;
+  transition-property: left, top, opacity;
+  transition-duration: 0.7s, 0.7s, 0.15s;
+  transition-timing-function: ease;
+  }
+  100% {
+  opacity: 0;
+  top: -30%;
+  left: -30%;
+  transition-property: left, top, opacity;
+  }
+}
